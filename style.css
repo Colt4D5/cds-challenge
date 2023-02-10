@@ -53,7 +53,7 @@ body > header {
   background-color: rgb(100 100 100 / 0.1);
 }
 
-h1 {
+h1#site-title {
   margin-bottom: 0;
 }
 

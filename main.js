@@ -61,9 +61,16 @@ document.querySelector('form#form').addEventListener('submit', e => {
   // if all required fields are valid
   if (Object.values(isValid).every(item => item)) {
     const formData = new FormData(e.target)
-    for (var [key, value] of formData.entries()) { 
-      console.log(key, value);
-    }
+    const firstName = formData.get('firstname');
+    const lastName = formData.get('lastname');
+    const phone = formData.get('phone');
+    const email = formData.get('email');
+    const promocode = formData.get('promocode');
+    const where = formData.get('where');
+    const other = formData.get('other');
+    const termsAccepted = formData.get('termsAccepted');
+    const url = `/success.html?${firstName ? 'firstname=' + firstName : ''}&${lastName ? 'lastname=' + lastName : ''}&${phone ? 'phone=' + phone : ''}&${email ? 'email=' + email : ''}&${promocode ? 'promocode=' + promocode : ''}&${where ? 'where=' + where : ''}&${termsAccepted ? 'termsAccepted=' + termsAccepted : ''}`;
+    window.location = url;
   } else { // else if invalid fields
     let index = 0;
     // scroll to first invalid element
