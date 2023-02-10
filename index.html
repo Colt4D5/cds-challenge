@@ -28,26 +28,78 @@
       </nav>
     </div>
   </header>
-  
-  <footer class="container">
-    <div class="grid">
-      <div>
-        <h2>Colton Arthur Allen</h2>
-        <p>13379 Arbor Park Ln.<br>
-        Moreno Valley, CA<br>
-        <a href="tel:+19517560273">951.756.0273</a><br>
-        <a href="mailto:coltonaallen@gmail.com">coltonaallen@gmail.com</a></p>
+
+  <main class="container">
+    <div id="form-wrapper">
+      <div id="form-header">
+        <img src="http://www.cdsreg.com/assets/NewBuilding_FakeGreenery_v2-1024x552.jpg" alt="">
       </div>
-      <div>
-        <h2>Navigation</h2>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">About Me</a></li>
-            <li><a href="/">Gallery</a></li>
-            <li><a href="/">Contact</a></li>
-          </ul>
-        </nav>
+      <form id="form">
+          <legend>Some Form Data</legend>
+          <p class="field-group">
+            <label for="firstname">First Name: </label>
+            <input type="text" name="firstname" maxlength="30" required />
+          </p>
+          <p class="field-group">
+            <label for="lastname">Last Name: </label>
+            <input type="text" name="lastname" maxlength="30" required />
+          </p>
+          <p class="field-group">
+            <label for="phone">Phone Number: </label>
+            <input type="phone" name="phone" id="phone" required />
+          </p>
+          <p class="field-group">
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" required />
+          </p>
+          <p class="field-group">
+            <label for="promocode">Promo Code: </label>
+            <input type="text" name="promocode" id="promocode" />
+          </p>
+          <p class="field-group">
+            <label for="where">How did you hear about us? </label>
+            <select type="select" name="where" id="where" >
+              <option value="Social Media">Social Media</option>
+              <option value="From a Friend">From a Friend</option>
+              <option value="Email">Email</option>
+              <option value="other">other</option>
+            </select>
+          </p>
+          <p class="field-group">
+            <input type="checkbox" name="termsAccepted" maxlength="30" required />
+            <label for="termsAccepted">I accept the <a href="#">terms & conditions</a></label>
+          </p>
+          <p class="field-group submit">
+            <input type="submit" value="Send">
+          </p>
+      </form>
+      <div id="form-footer">
+        <p>For assistance please call <a href="tel:+15555555555">555-5555</a> or email <a href="mailto:test@test.com">test@test.com</a>.</p>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <div class="grid">
+        <div>
+          <h2>Colton Arthur Allen</h2>
+          <p>13379 Arbor Park Ln.<br>
+          Moreno Valley, CA<br>
+          <a href="tel:+19517560273">951.756.0273</a><br>
+          <a href="mailto:coltonaallen@gmail.com">coltonaallen@gmail.com</a></p>
+        </div>
+        <div>
+          <h2>Navigation</h2>
+          <nav>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/">About Me</a></li>
+              <li><a href="/">Gallery</a></li>
+              <li><a href="/">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   </footer>

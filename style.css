@@ -48,6 +48,7 @@
 
 body > header {
   padding: 1.5rem 0;
+  background-color: rgb(100 100 100 / 0.1);
 }
 
 h1 {
@@ -60,4 +61,44 @@ header nav ul li.active a {
 
 header nav ul li.active a:hover {
   color: var(--secondary-hover);
+}
+
+
+#form-wrapper {
+  width: min(90%, 600px);
+  margin-inline: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: rgb(255 255 255 / 0.05);
+}
+
+#form-header img {
+  width: 100%;
+  aspect-ratio: 1024 / 300;
+  object-fit: cover;
+}
+
+form#form {
+  padding: 1rem;
+}
+
+form legend {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+#form-footer {
+  text-align: center;
+  background-color: rgb(100 100 100 / 0.1);
+  padding: 1rem 3rem;
+}
+
+#form-footer p {
+  margin-bottom: 0;
+}
+
+
+footer {
+  background-color: rgb(100 100 100 / 0.1);
 }
