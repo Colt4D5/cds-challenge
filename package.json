@@ -1,0 +1,14 @@
+{
+  "name": "convention-data-services",
+  "version": "1.0.0",
+  "description": "CDS Challenge #2",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Colton Arthur Allen",
+  "license": "ISC",
+  "dependencies": {
+    "@picocss/pico": "^1.5.7"
+  }
+}
