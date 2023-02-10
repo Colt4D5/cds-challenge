@@ -11,6 +11,8 @@
   --secondary-hover: #ff885d;
   --secondary-focus: rgba(253, 107, 53, 0.125);
   --secondary-inverse: #fff;
+
+  --form-element-active-border-color-invalid: rgb(198, 40, 40);
 }
 
 /* Pink Dark scheme (Auto) */
@@ -86,6 +88,23 @@ form legend {
   text-align: center;
   font-size: 1.5em;
   margin-bottom: 1em;
+}
+
+#form label sup {
+  color: rgb(198, 40, 40);
+}
+
+#form input.invalid {
+  color: var(--form-element-active-border-color-invalid);
+  border: 1px solid var(--form-element-active-border-color-invalid);
+}
+
+#form #other-input-group {
+  display: none;
+}
+
+#form #other-input-group.isVisible {
+  display: block;
 }
 
 #form-footer {

@@ -37,24 +37,25 @@
       <form id="form">
           <legend>Some Form Data</legend>
           <p class="field-group">
-            <label for="firstname">First Name: </label>
-            <input type="text" name="firstname" maxlength="30" required />
+            <label for="firstname">First Name: <sup>*</sup> </label>
+            <input type="text" name="firstname" required />
           </p>
           <p class="field-group">
-            <label for="lastname">Last Name: </label>
-            <input type="text" name="lastname" maxlength="30" required />
+            <label for="lastname">Last Name: <sup>*</sup> </label>
+            <input type="text" name="lastname" required />
           </p>
           <p class="field-group">
-            <label for="phone">Phone Number: </label>
-            <input type="phone" name="phone" id="phone" required />
+            <label for="phone">Phone Number: <sup>*</sup> </label>
+            <input title="Must use numbers only" pattern="[0-9]{7,30}" type="phone" name="phone" id="phone" required />
           </p>
           <p class="field-group">
-            <label for="email">Email: </label>
-            <input type="email" name="email" id="email" required />
+            <label for="email">Email: <sup>*</sup> </label>
+            <input type="text" name="email" id="email" required />
+            <span>Email is required in order to receive email confirmation</span>
           </p>
           <p class="field-group">
             <label for="promocode">Promo Code: </label>
-            <input type="text" name="promocode" id="promocode" />
+            <input type="text" name="promocode" id="promocode" maxlength="7" />
           </p>
           <p class="field-group">
             <label for="where">How did you hear about us? </label>
@@ -65,13 +66,17 @@
               <option value="other">other</option>
             </select>
           </p>
+          <p id="other-input-group" class="field-group">
+            <label for="other">Other: <sup>*</sup> </label>
+            <input type="text" name="other" id="other" maxlength="50" />
+          </p>
           <p class="field-group">
-            <input type="checkbox" name="termsAccepted" maxlength="30" required />
-            <label for="termsAccepted">I accept the <a nohref onclick="javascript:toggleTerms();return false;"
-              >terms & conditions</a></label>
+            <input type="checkbox" name="termsAccepted" required />
+            <label for="termsAccepted">I agree to the <a nohref onclick="javascript:toggleTerms();return false;"
+              >terms & conditions</a> of this event.</label>
           </p>
           <p class="field-group submit">
-            <input type="submit" value="Send">
+            <input type="submit" value="Send" disabled>
           </p>
       </form>
       <div id="form-footer">
