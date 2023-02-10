@@ -1,16 +1,16 @@
 const isValid = {
-  firstName: false,
-  lastName: false,
+  firstname: false,
+  lastname: false,
   email: false,
   phone: false,
-  termsAndConditions: false,
+  termsAccepted: false,
 }
 
 const firstNameInput = document.querySelector('form input[name="firstname"]');
-firstNameInput.addEventListener('input', e => validateInput(e.target, e.target.value.length > 30 || e.target.value.length === 0, 'firstName'));
+firstNameInput.addEventListener('input', e => validateInput(e.target, e.target.value.length > 30 || e.target.value.length === 0, 'firstname'));
 
 const lastNameInput = document.querySelector('form input[name="lastname"]');
-lastNameInput.addEventListener('input', e => validateInput(e.target, e.target.value.length > 30 || e.target.value.length === 0, 'lastName'));
+lastNameInput.addEventListener('input', e => validateInput(e.target, e.target.value.length > 30 || e.target.value.length === 0, 'lastname'));
 
 const phoneInput = document.querySelector('form input[name="phone"]');
 phoneInput.addEventListener('input', e => validateInput(e.target, /^\d+$/.test(e.target.value) === false || (e.target.value.length > 30 || e.target.value.length === 0), 'phone'));
@@ -21,10 +21,10 @@ emailInput.addEventListener('input', e => validateInput(e.target, /^\w+([\.-]?\w
 const acceptTermsCheck = document.querySelector('input[name="termsAccepted"]')
 acceptTermsCheck.addEventListener('change', e => {
   if (e.target.checked) {
-    isValid.termsAndConditions = true;
+    isValid.termsAccepted = true;
     document.querySelector('form#form input[type="submit"]').removeAttribute('disabled')
   } else {
-    isValid.termsAndConditions = false;
+    isValid.termsAccepted = false;
     document.querySelector('form#form input[type="submit"]').setAttribute('disabled', 'true')
   }
 })
@@ -56,16 +56,24 @@ function validateInput(target, condition, key) {
 }
 
 document.querySelector('form#form').addEventListener('submit', e => {
-  console.log(isValid)
   e.preventDefault()
   
+  // if all required fields are valid
   if (Object.values(isValid).every(item => item)) {
     const formData = new FormData(e.target)
     for (var [key, value] of formData.entries()) { 
       console.log(key, value);
     }
-  } else {
-    console.log('oops!')
+  } else { // else if invalid fields
+    let index = 0;
+    // scroll to first invalid element
+    for (const [key, value] of Object.entries(isValid)) {
+      if (!value && index === 0) {
+        const invalidField = document.querySelector(`[name="${key}"]`);
+        invalidField.focus();
+        index++;
+      }
+    }
   }
 })
 

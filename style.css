@@ -143,6 +143,7 @@ dialog#terms {
   top: 50%;
   left: 0;
   width: min(90%, 450px);
+  height: fit-content;
   transform: translate(0%, -50%);
   z-index: 3;
   padding: 2.5rem;
