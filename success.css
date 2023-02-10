@@ -1,0 +1,22 @@
+main {
+  min-height: 60vh;
+}
+
+#loader svg {
+  width: 100%;
+  margin: 2rem auto;
+}
+
+#form-output {
+  width: min(90%, 600px);
+  margin-inline: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: rgb(255 255 255 / 0.05);
+  padding: 2rem 1.5rem;
+  display: none;
+}
+
+.output-target {
+  background-color: rgb(100 100 100 / 0.3);
+}
