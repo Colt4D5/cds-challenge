@@ -79,7 +79,7 @@ header nav ul li.active a:hover {
 }
 
 form#form {
-  padding: 1rem;
+  padding: 1rem 1rem 0;
 }
 
 form legend {
@@ -98,6 +98,56 @@ form legend {
   margin-bottom: 0;
 }
 
+
+.terms-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 0.8);
+  z-index: 2;
+  
+  /* transition stuffs */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+html[data-terms-dialog-is-open="true"] .terms-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+dialog#terms {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: min(90%, 450px);
+  transform: translate(0%, -50%);
+  z-index: 3;
+  padding: 2.5rem;
+  min-height: 0;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+dialog#terms h2 {
+  margin-bottom: 0.5em;
+}
+
+#close-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+  transition: scale 0.3s ease;
+}
+
+#close-btn:hover {
+  scale: 1.1;
+}
 
 footer {
   background-color: rgb(100 100 100 / 0.1);

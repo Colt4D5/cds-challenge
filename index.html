@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-terms-dialog-is-open="false">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="node_modules/@picocss/pico/css/pico.min.css">
   <link rel="stylesheet" href="style.css">
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
   <title>CDS Form Challenge</title>
 </head>
 <body>
@@ -67,7 +67,8 @@
           </p>
           <p class="field-group">
             <input type="checkbox" name="termsAccepted" maxlength="30" required />
-            <label for="termsAccepted">I accept the <a href="#">terms & conditions</a></label>
+            <label for="termsAccepted">I accept the <a nohref onclick="javascript:toggleTerms();return false;"
+              >terms & conditions</a></label>
           </p>
           <p class="field-group submit">
             <input type="submit" value="Send">
@@ -78,6 +79,17 @@
       </div>
     </div>
   </main>
+
+  <div class="terms-overlay"></div>
+  <dialog id="terms">
+    <h2>Terms & Conditions</h2>
+    <ul>
+      <li>All cancellation requests must be received by March 1, 2022.</li>
+      <li>All cancellation requests are subject to a $100 cancellation fee.</li>
+      <li>No one under the age of 16 will be allowed on the show floor.</li>
+    </ul>
+    <svg id="close-btn" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g data-name="Layer 2"><g data-name="close"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"/><path d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"/></g></g></svg>
+  </dialog>
   
   <footer>
     <div class="container">
