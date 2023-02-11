@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-terms-dialog-is-open="false">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="node_modules/@picocss/pico/css/pico.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="challenge.css">
+  <script src="main.js" defer></script>
+  <title>CDS Form Challenge</title>
+</head>
+<body>
+  
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <h1 id="site-title">Colton Arthur Allen</h1>
+          </li>
+        </ul>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">About Me</a></li>
+          <li class="active"><a href="/challenge.html">Challenges</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container content">
+      <h1>Code Challenges</h1>
+      <div id="tabs">
+        <button data-challenge="1" class="is_active">Challenge #1</button>
+        <button data-challenge="2">Challenge #2</button>
+        <button data-challenge="3">Challenge #3</button>
+        <button data-challenge="4">Challenge #4</button>
+      </div>
+      <div class="tab tab-1" data-challenge="1">
+        <h2>Challenge 1</h2>
+        <h3 class="code-heading">Provided:</h3>
+        <code>
+          &lt;form id=&quot;Form1&quot; name=&quot;Form1&quot; action=&quot;regInfo_p.asp method=&quot;post&quot; class=&quot;form-horizontal&quot;&gt;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;hidden&quot; name=&quot;sc&quot; id=&quot;sc&quot; value=&quot;&lt;%=sc%&gt;&quot; /&gt;<br>
+          &lt;form&gt;
+        </code>
+        <h3 class="code-heading">Solution:</h3>
+        <code>
+          &lt;form id=&quot;Form1&quot; name=&quot;Form1&quot; action=&quot;regInfo_p.asp<span class="edit add">&quot;</span> method=&quot;post&quot; class=&quot;form-horizontal&quot;&gt;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;hidden&quot; name=&quot;sc&quot; id=&quot;sc&quot; value=&quot;&lt;%=sc%&gt;&quot; /&gt;<br>
+          &lt;<span class="edit add">/</span>form&gt;
+        </code>
+        <h4>Edits:</h4>
+        <ul>
+          <li>Closed quotes on <code>action="regInfo_p.asp</code></li>
+          <li>Added <code>/</code> to close <code>&lt;form&gt;</code> tag</li>
+        </ul>
+        <h4>Comments:</h4>
+        <ul>
+          <li>I'm not familiar with .asp nor its syntax, so I can't determine whether the action of the form or the value on the input is valid or not. From what I can gather based on my research is that the form is submitting a post request to an asp (Active Server Pages) file with the input value set to "sc". Beyond that, I'm not really sure about it.</li>
+          <li>The input field is set to hidden, though I'm not sure of its context, so it could be valid or could not be valid.</li>
+        </ul>
+      </div>
+
+      <div class="tab tab-2 is_active" data-challenge="2">
+        <h2>Challenge 2</h2>
+        <h3 class="code-heading">Provided:</h3>
+        <code>
+          $(HandicapBtn&quot;).on(&quot;click&quot;, function(evt) { <br>
+            &nbsp;&nbsp;if ($(this).prop(&quot;checked&quot;)) { <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;$(&quot;[id^=Row_HandicapText]&quot;).show(); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#HandicapText&quot;).addClass(&quot;required&quot;); <br>
+              &nbsp;&nbsp;} else { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;$(&quot;[id^=Row_HandicapText]&quot;).hide; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#HandicapText&quot;).val(&quot;&quot;).removeClass(&quot;required&quot;); <br>
+                &nbsp;&nbsp;} <br>
+          });
+        </code>
+        <h3 class="code-heading">Solution:</h3>
+        <code>
+          $(<span class="edit add">"#</span>HandicapBtn&quot;).on(&quot;click&quot;, function(evt) { <br>
+            &nbsp;&nbsp;if ($(this).prop(&quot;checked&quot;)) { <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;$(&quot;[id^=Row_HandicapText]&quot;).show(); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#HandicapText&quot;).addClass(&quot;required&quot;); <br>
+              &nbsp;&nbsp;} else { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;$(&quot;[id^=Row_HandicapText]&quot;).hide<span class="edit add">()</span>; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#HandicapText&quot;).val(&quot;&quot;).removeClass(&quot;required&quot;); <br>
+                &nbsp;&nbsp;} <br>
+          });
+        </code>
+        <h4>Edits:</h4>
+        <ul>
+          <li>Added open quotes on the initial element query on which the click event is attached.</li>
+          <li>Added the id selector<sup>*</sup> to the initial element query on which the click event is attached.</li>
+          <li>The <code>.hide</code> method is referenced on the "Row_HandicapText" queried element but is not invoked, so I added parenthesis to do just that.</li>
+        </ul>
+        <h4>Comments:</h4>
+        <ul>
+          <li><sup>*</sup>I'm doing a bit of assuming about what the structure of the HTML looks like, but in order to select an element the initial element on which the click event is attached must be prefixed with either an id or class selector <em>(depending on the HTML element)</em>.</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <div class="grid">
+        <div>
+          <h2>Colton Arthur Allen</h2>
+          <p>13379 Arbor Park Ln.<br>
+          Moreno Valley, CA<br>
+          <a href="tel:+19517560273">951.756.0273</a><br>
+          <a href="mailto:coltonaallen@gmail.com">coltonaallen@gmail.com</a></p>
+        </div>
+        <div>
+          <h2>Navigation</h2>
+          <nav>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/">About Me</a></li>
+              <li><a href="/">Gallery</a></li>
+              <li><a href="/">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
