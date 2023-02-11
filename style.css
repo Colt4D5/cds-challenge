@@ -104,7 +104,7 @@ form legend {
   display: none;
 }
 
-#form input {
+#form input:not([type="checkbox"]) {
   font-size: 12px;
 }
 
@@ -187,4 +187,48 @@ dialog#terms h2 {
 
 footer {
   background-color: rgb(100 100 100 / 0.1);
+}
+
+.toast {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translate(-50%, -3rem);
+  opacity: 0;
+  padding: 1rem;
+  text-align: center;
+  width: min(75%, 350px);
+
+  background-color: #999;
+  color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 6px 4px 10px rgb(0 0 0 / 0.2);
+  animation: show-toast 5s ease;
+}
+
+@keyframes show-toast {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -2rem);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  90% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -2rem);
+  }
+}
+
+.toast.success {
+  background-color: #388e3c;
+}
+
+.toast.error {
+  background-color: #b71c1c;
 }
