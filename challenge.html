@@ -20,7 +20,7 @@
             <h1 id="site-title">Colton Arthur Allen</h1>
           </li>
         </ul>
-        <ul>
+        <ul class="navigation">
           <li><a href="/">Home</a></li>
           <li><a href="/about.html">About Me</a></li>
           <li class="active"><a href="/challenge.html">Challenges</a></li>
@@ -33,10 +33,10 @@
     <div class="container content">
       <h1>Code Challenges</h1>
       <div id="tabs">
-        <button data-challenge="1" class="is_active">Challenge #1</button>
-        <button data-challenge="2">Challenge #2</button>
-        <button data-challenge="3">Challenge #3</button>
-        <button data-challenge="4">Challenge #4</button>
+        <button data-challenge="1" class="is_active"><span class="show-for-medium">Challenge </span>#1</button>
+        <button data-challenge="2"><span class="show-for-medium">Challenge </span>#2</button>
+        <button data-challenge="3"><span class="show-for-medium">Challenge </span>#3</button>
+        <button data-challenge="4"><span class="show-for-medium">Challenge </span>#4</button>
       </div>
       <div class="tab is_active" data-challenge="1">
         <h2>Challenge 1</h2>
@@ -176,17 +176,17 @@ email where optin equals 1 and order the results alphabetically:
     </div>
   </main>
   
-  <footer>
+  <footer id="footer">
     <div class="container">
       <div class="grid">
-        <div>
+        <div class="footer-col contact">
           <h2>Colton Arthur Allen</h2>
           <p>13379 Arbor Park Ln.<br>
           Moreno Valley, CA<br>
           <a href="tel:+19517560273">951.756.0273</a><br>
           <a href="mailto:coltonaallen@gmail.com">coltonaallen@gmail.com</a></p>
         </div>
-        <div>
+        <div class="footer-col navigation">
           <h2>Navigation</h2>
           <nav>
             <ul>
@@ -197,7 +197,21 @@ email where optin equals 1 and order the results alphabetically:
             </ul>
           </nav>
         </div>
+        <div class="footer-col links">
+          <h2>Links</h2>
+          <nav>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/">About Me</a></li>
+              <li><a href="/">Gallery</a></li>
+              <li><a href="/">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p>Copyright <sup>©</sup>2023 | Colton Arthur Allen | All Rights Reserved</p>
     </div>
   </footer>
 

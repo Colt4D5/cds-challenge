@@ -1,4 +1,11 @@
+#tabs {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 button[data-challenge] {
+  flex: 1;
   width: auto;
   display: inline;
   border-radius: 50% 50% 0 0;
@@ -6,10 +13,23 @@ button[data-challenge] {
   transition: background-color 0.3s ease;
 }
 
-
 button[data-challenge].is_active {
   background-color: hsl(206, 80%, 54%);
 }
+
+.show-for-medium {
+  display: none;
+}
+
+@media screen and (min-width: 40em) {
+  #tabs {
+    display: block;
+  }
+  .show-for-medium {
+    display: inline;
+  }
+}
+
 .tab {
   background-color: rgb(100 100 100 / 0.1);
   display: none;

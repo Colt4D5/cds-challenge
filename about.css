@@ -12,6 +12,13 @@ main > .container {
   float: left;
   max-width: 300px;
   margin-right: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 40em) {
+  #pic {
+    margin-bottom: 0;
+  }
 }
 
 #bio p {
