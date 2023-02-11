@@ -69,7 +69,7 @@ document.querySelector('form#form').addEventListener('submit', e => {
     const where = formData.get('where');
     const other = formData.get('other');
     const termsAccepted = formData.get('termsAccepted');
-    const url = `/success.html?${firstName ? 'firstname=' + firstName : ''}&${lastName ? 'lastname=' + lastName : ''}&${phone ? 'phone=' + phone : ''}&${email ? 'email=' + email : ''}&${promocode ? 'promocode=' + promocode : ''}&${where ? 'where=' + where : ''}&${termsAccepted ? 'termsAccepted=' + termsAccepted : ''}`;
+    const url = `/success.html?${firstName ? 'firstname=' + firstName : ''}&${lastName ? 'lastname=' + lastName : ''}&${phone ? 'phone=' + phone : ''}&${email ? 'email=' + email : ''}&${promocode ? 'promocode=' + promocode : ''}&${where ? 'where=' + where : ''}&${other ? 'other=' + other : ''}&${termsAccepted ? 'termsAccepted=' + termsAccepted : ''}`;
     window.location = url;
   } else { // else if invalid fields
     let index = 0;
