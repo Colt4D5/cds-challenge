@@ -92,6 +92,7 @@ form legend {
 
 #form label sup {
   color: rgb(198, 40, 40);
+  font-weight: bolder;
 }
 
 #form input.invalid {
