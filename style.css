@@ -1,4 +1,7 @@
-/* Pink Light scheme (Default) */
+html :is:(*, *::before, *::after) {
+  box-sizing: border-box;
+}
+
 /* Can be forced with data-theme="light" */
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
@@ -53,8 +56,31 @@ body > header {
   background-color: rgb(100 100 100 / 0.1);
 }
 
+body > header nav {
+  justify-content: center;
+}
+
 h1#site-title {
   margin-bottom: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+}
+
+body > header nav ul.navigation {
+  display: none;
+}
+
+@media (min-width: 40em) {
+  body > header nav {
+    justify-content: space-between;
+  }
+  body > header nav ul.navigation {
+    display: flex;
+  }
+}
+
+header nav ul li a {
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
 }
 
 header nav ul li.active a {
@@ -104,7 +130,7 @@ form legend {
   display: none;
 }
 
-#form input:not([type="checkbox"]) {
+#form input:not([type="checkbox"], [type="submit"]) {
   font-size: 12px;
 }
 
@@ -185,8 +211,88 @@ dialog#terms h2 {
   scale: 1.1;
 }
 
-footer {
+body footer {
+  padding-bottom: 0;
   background-color: rgb(100 100 100 / 0.1);
+}
+
+footer .footer-col  {
+  margin-bottom: 3rem;
+}
+
+footer h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+footer h2::after {
+  content: '';
+  position: absolute;
+  bottom: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 75px;
+  background-color: #fff;
+}
+
+footer .contact p {
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+footer nav {
+  justify-content: center;
+}
+
+footer#footer nav ul {
+  flex-direction: column;
+  margin: 0;
+}
+
+footer nav ul li {
+  padding: 0;
+}
+
+footer nav ul li a {
+  display: inline-block;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  padding: 0.75rem;
+}
+
+footer .footer-disclaimer {
+  padding: 1rem 2rem;
+  background-color: rgb(255 255 255 / 0.05);
+}
+
+footer .footer-disclaimer p {
+  text-align: center;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+@media screen and (min-width: 40em) {
+  footer nav {
+    justify-content: flex-start;
+  }
+  footer nav ul {
+    align-items: flex-start;
+  }
+  footer nav ul li a {
+    padding: 0.4rem;
+  }
+  footer .contact p {
+    text-align: left;
+  }
+  footer h2 {
+    text-align: left;
+  }
+  footer h2::after {
+    left: 0;
+    transform: translateX(0);
+    width: 80%;
+  }
 }
 
 .toast {
