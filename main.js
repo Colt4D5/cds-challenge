@@ -3,6 +3,7 @@ const isValid = {
   lastname: false,
   email: false,
   phone: false,
+  where: false,
   termsAccepted: false,
 }
 
@@ -17,6 +18,32 @@ phoneInput.addEventListener('input', e => validateInput(e.target, /^\d+$/.test(e
 
 const emailInput = document.querySelector('form input[name="email"]');
 emailInput.addEventListener('input', e => validateInput(e.target, /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/.test(e.target.value) === false || (e.target.value.length > 50 || e.target.value.length === 0), 'email'));
+
+const promoInput = document.querySelector('form input[name="promocode"]');
+promoInput.addEventListener('input', e => {
+  const length = e.target.value.length
+  console.log(isValid)
+  if (length === 0) {
+    document.querySelector('select[name="where"]').setAttribute('required', 'true');
+    document.querySelector('label[for="where"]').innerHTML = 'How did you hear about us? <sup>*</sup>';
+    if (document.querySelector('select[name="where"]').value === 'none') {
+      isValid.where = false;
+    }
+  } else {
+    document.querySelector('select[name="where"]').removeAttribute('required');
+    document.querySelector('label[for="where"]').innerHTML = 'How did you hear about us? ';
+    if (document.querySelector('select[name="where"]').value === 'none')
+    isValid.where = true;
+  }
+});
+
+document.querySelector('select[name="where"]').addEventListener('change', e => {
+  if (promoInput.value.length > 0 && e.target.value !== 'none') {
+    isValid.where = true;
+  } else {
+    isValid.where = false;
+  }
+});
 
 const acceptTermsCheck = document.querySelector('input[name="termsAccepted"]')
 acceptTermsCheck.addEventListener('change', e => {
@@ -33,6 +60,7 @@ const otherInput = document.querySelector('input[name="other"]');
 
 const selectInput = document.querySelector('form select[name="where"]');
 selectInput.addEventListener('change', e => {
+  if (e.target.value !== 'none') isValid.where = true;
   if (e.target.value === 'other') {
     document.querySelector('#other-input-group').classList.add('isVisible');
     document.querySelector('input[name="other"]').setAttribute('required', true)

@@ -58,8 +58,9 @@
             <input title="Up to 7 numbers or letters only" pattern="[a-zA-Z0-9]{0,7}" type="text" name="promocode" id="promocode" />
           </p>
           <p class="field-group">
-            <label for="where">How did you hear about us? </label>
-            <select type="select" name="where" id="where" >
+            <label for="where">How did you hear about us? <sup>*</sup></label>
+            <select type="select" name="where" id="where" required>
+              <option value="none" selected disabled hidden>Select an option</option>
               <option value="Social Media">Social Media</option>
               <option value="From a Friend">From a Friend</option>
               <option value="Email">Email</option>
