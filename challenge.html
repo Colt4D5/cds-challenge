@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="node_modules/@picocss/pico/css/pico.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="challenge.css">
-  <script src="main.js" defer></script>
+  <script src="challenge.js" defer></script>
   <title>CDS Form Challenge</title>
 </head>
 <body>
@@ -38,7 +38,7 @@
         <button data-challenge="3">Challenge #3</button>
         <button data-challenge="4">Challenge #4</button>
       </div>
-      <div class="tab tab-1" data-challenge="1">
+      <div class="tab" data-challenge="1">
         <h2>Challenge 1</h2>
         <h3 class="code-heading">Provided:</h3>
         <code>
@@ -64,7 +64,7 @@
         </ul>
       </div>
 
-      <div class="tab tab-2 is_active" data-challenge="2">
+      <div class="tab" data-challenge="2">
         <h2>Challenge 2</h2>
         <h3 class="code-heading">Provided:</h3>
         <code>
@@ -99,6 +99,57 @@
         <h4>Comments:</h4>
         <ul>
           <li><sup>*</sup>I'm doing a bit of assuming about what the structure of the HTML looks like, but in order to select an element the initial element on which the click event is attached must be prefixed with either an id or class selector <em>(depending on the HTML element)</em>.</li>
+        </ul>
+      </div>
+
+      <div class="tab is_active" data-challenge="3">
+        <h2>Challenge 3</h2>
+        <h3 class="code-heading">Provided:</h3>
+        <code>
+          SELECT<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[name] AS valuefield<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,[longname] AS labelfield<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,state_id<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;regionId<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;FROM TAB_SS_StateDefinitions<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;WHERE(@Country = ''<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OR Country = @Country)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AND Name <> XX<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;ORDER BY<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labelfield<br>
+        </code>
+        <h3 class="code-heading">Solution:</h3>
+        <code>
+          
+        </code>
+        <h4>Edits:</h4>
+        <ul>
+          <li></li>
+        </ul>
+        <h4>Comments:</h4>
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+
+      <div class="tab" data-challenge="4">
+        <h2>Challenge 4</h2>
+        <h3 class="code-heading">Provided:</h3>
+        <code>
+          Write a select statement from the TAB_Reg table that selects firstname, lastname, optin and
+email where optin equals 1 and order the results alphabetically:
+        </code>
+        <h3 class="code-heading">Solution:</h3>
+        <code>
+          
+        </code>
+        <h4>Edits:</h4>
+        <ul>
+          <li></li>
+        </ul>
+        <h4>Comments:</h4>
+        <ul>
+          <li></li>
         </ul>
       </div>
 
