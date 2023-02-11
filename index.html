@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="node_modules/@picocss/pico/css/pico.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="main.js" defer></script>
+  <script src="mobile-menu.js" defer></script>
   <title>CDS Form Challenge</title>
 </head>
 <body>
@@ -26,7 +27,20 @@
         </ul>
       </nav>
     </div>
+    <a nohref id="mobile-menu-btn-wrapper">
+      <svg id="mobile-menu-btn" class="hide-for-medium" width="32px" height="32px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g data-name="Layer 2"><g data-name="more-vertical"><rect width="24" height="24" transform="rotate(-90 12 12)" opacity="0"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="12" cy="19" r="2"/></g></g></svg>
+    </a>
   </header>
+
+  <div id="mobile-nav" class="hide-for-medium">
+    <nav>
+      <ul class="navigation">
+        <li class="is_active"><a href="/">Home</a></li>
+        <li><a href="/about.html">About Me</a></li>
+        <li><a href="/challenge.html">Challenges</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <main class="container">
     <div id="form-wrapper">

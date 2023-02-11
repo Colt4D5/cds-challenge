@@ -54,6 +54,7 @@ html :is:(*, *::before, *::after) {
 body > header {
   padding: 1.5rem 0;
   background-color: rgb(100 100 100 / 0.1);
+  position: relative;
 }
 
 body > header nav {
@@ -89,6 +90,63 @@ header nav ul li.active a {
 
 header nav ul li.active a:hover {
   color: var(--secondary-hover);
+}
+
+header #mobile-menu-btn {
+  position: absolute;
+  right: 1.5rem;
+  top: 25%;
+  transform-origin: center center;
+  transition: rotate 0.3s ease;
+  fill: #fff;
+}
+
+body.mobileMenuIsOpen header #mobile-menu-btn {
+  rotate: 90deg;
+  fill: var(--secondary);
+}
+
+#mobile-nav {
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  transition: max-height 0.5s ease-in;
+  overflow: hidden;
+}
+
+body.mobileMenuIsOpen #mobile-nav {
+  max-height: 175px;
+}
+
+#mobile-nav nav {
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+#mobile-nav nav ul {
+  flex-direction: column;
+}
+
+#mobile-nav nav ul li {
+  padding: 0.5rem;
+}
+
+#mobile-nav nav ul li a {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+#mobile-nav nav ul li.is_active a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+@media (min-width: 40em) {
+  .hide-for-medium {
+    display: none;
+  }
 }
 
 

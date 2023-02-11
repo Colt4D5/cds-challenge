@@ -9,7 +9,6 @@ main > .container {
 }
 
 #pic {
-  float: left;
   max-width: 300px;
   margin-right: 1rem;
   margin-bottom: 1.5rem;
@@ -17,6 +16,7 @@ main > .container {
 
 @media screen and (min-width: 40em) {
   #pic {
+    float: left
     margin-bottom: 0;
   }
 }
