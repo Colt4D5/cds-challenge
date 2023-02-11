@@ -8,16 +8,28 @@ const isValid = {
 }
 
 const firstNameInput = document.querySelector('form input[name="firstname"]');
-firstNameInput.addEventListener('input', e => validateInput(e.target, e.target.value.length > 30 || e.target.value.length === 0, 'firstname'));
+firstNameInput.addEventListener('input', e => {
+  validateInput(e.target, e.target.value.length > 30 || e.target.value.length === 0, 'firstname')
+  validateFormFields();
+});
 
 const lastNameInput = document.querySelector('form input[name="lastname"]');
-lastNameInput.addEventListener('input', e => validateInput(e.target, e.target.value.length > 30 || e.target.value.length === 0, 'lastname'));
+lastNameInput.addEventListener('input', e => {
+  validateInput(e.target, e.target.value.length > 30 || e.target.value.length === 0, 'lastname');
+  validateFormFields();
+});
 
 const phoneInput = document.querySelector('form input[name="phone"]');
-phoneInput.addEventListener('input', e => validateInput(e.target, /^\d+$/.test(e.target.value) === false || (e.target.value.length > 30 || e.target.value.length === 0), 'phone'));
+phoneInput.addEventListener('input', e => {
+  validateInput(e.target, /^\d+$/.test(e.target.value) === false || (e.target.value.length > 30 || e.target.value.length === 0), 'phone');
+  validateFormFields();
+});
 
 const emailInput = document.querySelector('form input[name="email"]');
-emailInput.addEventListener('input', e => validateInput(e.target, /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/.test(e.target.value) === false || (e.target.value.length > 50 || e.target.value.length === 0), 'email'));
+emailInput.addEventListener('input', e => {
+  validateInput(e.target, /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/.test(e.target.value) === false || (e.target.value.length > 50 || e.target.value.length === 0), 'email');
+  validateFormFields();
+});
 
 const promoInput = document.querySelector('form input[name="promocode"]');
 promoInput.addEventListener('input', e => {
@@ -35,6 +47,7 @@ promoInput.addEventListener('input', e => {
     if (document.querySelector('select[name="where"]').value === 'none')
     isValid.where = true;
   }
+  validateFormFields();
 });
 
 document.querySelector('select[name="where"]').addEventListener('change', e => {
@@ -43,6 +56,7 @@ document.querySelector('select[name="where"]').addEventListener('change', e => {
   } else {
     isValid.where = false;
   }
+  validateFormFields();
 });
 
 const acceptTermsCheck = document.querySelector('input[name="termsAccepted"]')
@@ -54,9 +68,10 @@ acceptTermsCheck.addEventListener('change', e => {
     isValid.termsAccepted = false;
     document.querySelector('form#form input[type="submit"]').setAttribute('disabled', 'true')
   }
+  validateFormFields();
 })
 
-const otherInput = document.querySelector('input[name="other"]');
+// const otherInput = document.querySelector('input[name="other"]');
 
 const selectInput = document.querySelector('form select[name="where"]');
 selectInput.addEventListener('change', e => {
@@ -69,6 +84,7 @@ selectInput.addEventListener('change', e => {
     document.querySelector('input[name="other"]').value = ''
     document.querySelector('input[name="other"]').removeAttribute('required')
   }
+  validateFormFields();
 });
 
 
@@ -124,4 +140,34 @@ function toggleTerms() {
 [
   document.querySelector('.terms-overlay'),
   document.querySelector('dialog#terms #close-btn')
-].forEach(el => el.addEventListener('click', toggleTerms))
+].forEach(el => el.addEventListener('click', toggleTerms));
+
+const state = {
+  last: false,
+}
+
+function validateFormFields() {
+  const currentState = Object.values(isValid).every(item => item);
+  if (state.last != currentState) {
+    if (currentState) {
+      addNewToast('All fields are valid', 'success')
+      state.last = true;
+    } else {
+      addNewToast('All fields are no longer valid', 'error')
+      state.last = false;
+    }
+  }
+}
+
+function addNewToast(msg, state) {
+  const toast = document.createElement("div");
+  const text = document.createTextNode(msg);
+  toast.appendChild(text);
+  toast.classList.add('toast');
+  toast.classList.add(state);
+  document.querySelector('#toast-wrapper').insertAdjacentElement('beforeend', toast);
+  console.log(document.querySelector('#toast-wrapper').firstChild)
+  setTimeout(() => {
+    toast.remove();
+  }, 5000);
+}
