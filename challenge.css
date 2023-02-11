@@ -1,0 +1,53 @@
+button[data-challenge] {
+  width: auto;
+  display: inline;
+  border-radius: 50% 50% 0 0;
+  margin-bottom: 0;
+  transition: background-color 0.3s ease;
+}
+
+
+button[data-challenge].is_active {
+  background-color: hsl(206, 80%, 54%);
+}
+.tab {
+  background-color: rgb(100 100 100 / 0.1);
+  display: none;
+  border-radius: 0 0 2rem 2rem;
+  padding: 3rem 2rem;
+}
+
+.tab.is_active {
+  display: block;
+}
+
+.tab h2 {
+  text-align: center;
+}
+
+code {
+	display: block; 
+	font-size: 1.1rem; 
+	line-height: 20px;
+	width: 100%;
+	background-color: #333;
+	font-family: monospace;
+	color: #f7f7f7;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+li code {
+  display: inline;
+  padding: 0.5rem;
+}
+
+h3.code-heading {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+code .edit.add {
+  /* color: #388e3c; */
+  color: #b71c1c;
+}
