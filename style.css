@@ -104,6 +104,19 @@ form legend {
   display: none;
 }
 
+#form input {
+  font-size: 12px;
+}
+
+#form input:is([name="firstname"], [name="lastname"]) {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#form input[name="email"] {
+  font-style: italic;
+}
+
 #form #other-input-group.isVisible {
   display: block;
 }
@@ -116,6 +129,8 @@ form legend {
 
 #form-footer p {
   margin-bottom: 0;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 
