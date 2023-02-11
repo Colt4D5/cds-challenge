@@ -35,50 +35,50 @@
         <img src="http://www.cdsreg.com/assets/NewBuilding_FakeGreenery_v2-1024x552.jpg" alt="">
       </div>
       <form id="form" action="success.html" method="GET">
-          <legend>Some Form Data</legend>
-          <p class="field-group">
-            <label for="firstname">First Name: <sup>*</sup> </label>
-            <input type="text" name="firstname" required />
-          </p>
-          <p class="field-group">
-            <label for="lastname">Last Name: <sup>*</sup> </label>
-            <input type="text" name="lastname" required />
-          </p>
-          <p class="field-group">
-            <label for="phone">Phone Number: <sup>*</sup> </label>
-            <input title="Must use numbers only" pattern="[0-9]{7,30}" type="phone" name="phone" id="phone" required />
-          </p>
-          <p class="field-group">
-            <label for="email">Email: <sup>*</sup> </label>
-            <input type="text" name="email" id="email" required />
-            <span>Email is required in order to receive email confirmation</span>
-          </p>
-          <p class="field-group">
-            <label for="promocode">Promo Code: </label>
-            <input title="Up to 7 numbers or letters only" pattern="[a-zA-Z0-9]{0,7}" type="text" name="promocode" id="promocode" />
-          </p>
-          <p class="field-group">
-            <label for="where">How did you hear about us? <sup>*</sup></label>
-            <select type="select" name="where" id="where" required>
-              <option value="none" selected disabled hidden>Select an option</option>
-              <option value="Social Media">Social Media</option>
-              <option value="From a Friend">From a Friend</option>
-              <option value="Email">Email</option>
-              <option value="other">other</option>
-            </select>
-          </p>
-          <p id="other-input-group" class="field-group">
-            <label for="other">Other: <sup>*</sup> </label>
-            <input type="text" name="other" id="other" maxlength="50" />
-          </p>
-          <p class="field-group">
-            <input type="checkbox" name="termsAccepted" required />
-            <label for="termsAccepted">I agree to the <a nohref onclick="javascript:toggleTerms();return false;"
-              >terms & conditions</a> of this event.</label>
-          </p>
-          <p class="field-group submit">
-            <input type="submit" value="Send" disabled>
-          </p>
+        <legend>Contact Details</legend>
+        <p class="field-group">
+          <label for="firstname">First Name: <sup>*</sup> </label>
+          <input type="text" name="firstname" required />
+        </p>
+        <p class="field-group">
+          <label for="lastname">Last Name: <sup>*</sup> </label>
+          <input type="text" name="lastname" required />
+        </p>
+        <p class="field-group">
+          <label for="phone">Phone Number: <sup>*</sup> </label>
+          <input title="Must use numbers only" pattern="[0-9]{7,30}" type="phone" name="phone" id="phone" required />
+        </p>
+        <p class="field-group">
+          <label for="email">Email: <sup>*</sup> </label>
+          <input type="text" name="email" id="email" required />
+          <span>Email is required in order to receive email confirmation</span>
+        </p>
+        <p class="field-group">
+          <label for="promocode">Promo Code: </label>
+          <input title="Up to 7 numbers or letters only" pattern="[a-zA-Z0-9]{0,7}" type="text" name="promocode" id="promocode" />
+        </p>
+        <p class="field-group">
+          <label for="where">How did you hear about us? <sup>*</sup></label>
+          <select type="select" name="where" id="where" required>
+            <option value="none" selected disabled hidden>Select an option</option>
+            <option value="Social Media">Social Media</option>
+            <option value="From a Friend">From a Friend</option>
+            <option value="Email">Email</option>
+            <option value="other">other</option>
+          </select>
+        </p>
+        <p id="other-input-group" class="field-group">
+          <label for="other">Other: <sup>*</sup> </label>
+          <input type="text" name="other" id="other" maxlength="50" />
+        </p>
+        <p class="field-group">
+          <input type="checkbox" name="termsAccepted" required />
+          <label for="termsAccepted">I agree to the <a nohref onclick="javascript:toggleTerms();return false;"
+            >terms & conditions</a> of this event.</label>
+        </p>
+        <p class="field-group submit">
+          <input type="submit" value="Send" disabled>
+        </p>
       </form>
       <div id="form-footer">
         <p>For assistance please call <a href="tel:+15555555555">555-5555</a> or email <a href="mailto:test@test.com">test@test.com</a>.</p>
