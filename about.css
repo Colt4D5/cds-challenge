@@ -1,0 +1,36 @@
+main {
+  position: relative;
+}
+
+main > .container {
+  border-radius: 1.5rem;
+  padding: 3rem;
+  background-color: #19242daa;
+}
+
+#pic {
+  float: left;
+  max-width: 300px;
+  margin-right: 1rem;
+}
+
+#bio p {
+  margin-bottom: 0.5rem;
+}
+
+#bio p:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.disclaimer {
+  font-size: 0.75em;
+}
+
+canvas#bg-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.1;
+}
