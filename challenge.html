@@ -38,7 +38,7 @@
         <button data-challenge="3">Challenge #3</button>
         <button data-challenge="4">Challenge #4</button>
       </div>
-      <div class="tab" data-challenge="1">
+      <div class="tab is_active" data-challenge="1">
         <h2>Challenge 1</h2>
         <h3 class="code-heading">Provided:</h3>
         <code>
@@ -102,7 +102,7 @@
         </ul>
       </div>
 
-      <div class="tab is_active" data-challenge="3">
+      <div class="tab" data-challenge="3">
         <h2>Challenge 3</h2>
         <h3 class="code-heading">Provided:</h3>
         <code>
@@ -116,19 +116,33 @@
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OR Country = @Country)<br>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AND Name <> XX<br>
             &nbsp;&nbsp;&nbsp;&nbsp;ORDER BY<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labelfield<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labelfield
         </code>
         <h3 class="code-heading">Solution:</h3>
         <code>
-          
+          SELECT<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[name] AS valuefield<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,[longname] AS labelfield<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,state_id<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;regionId<br>
+            FROM <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;TAB_SS_StateDefinitions<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;WHERE <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(@Country = '' OR Country = @Country)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AND <del>N</del><span class="edit add">n</span>ame <> XX<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;ORDER BY<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labelfield<span class="edit add">;</span>
         </code>
         <h4>Edits:</h4>
         <ul>
-          <li></li>
+          <li><code>Name</code> changed to lowercase to match SELECT query <code>name</code>.</li>
+          <li>Added semi-colon at end of query statement.</li>
+          <li>Format changes<sup>*</sup></li>
         </ul>
         <h4>Comments:</h4>
         <ul>
-          <li></li>
+          <li>I'm not too good with SQL, so that's about it as far as I can tell.</li>
+          <li><sup>*</sup>I've also reformatted the styling a bit to make it a bit more readable, but I don't think it'll have any effect on its functionality...</li>
         </ul>
       </div>
 
@@ -141,15 +155,21 @@ email where optin equals 1 and order the results alphabetically:
         </code>
         <h3 class="code-heading">Solution:</h3>
         <code>
-          
+          SELECT<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firstname<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,lastname<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,optin<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email<br>
+            FROM <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;TAB_Reg<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;WHERE <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;optin = 1<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;ORDER BY<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastname, firstname;
         </code>
-        <h4>Edits:</h4>
-        <ul>
-          <li></li>
-        </ul>
         <h4>Comments:</h4>
         <ul>
-          <li></li>
+          <li>Although not specified, I am assuming here that you are looking for the results to be alphabetically ordered by last name.</li>
         </ul>
       </div>
 
