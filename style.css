@@ -1,4 +1,4 @@
-html :is:(*, *::before, *::after) {
+html :is(*, *::before, *::after) {
   box-sizing: border-box;
 }
 
