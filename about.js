@@ -25,6 +25,10 @@ draw() {
   ctx.closePath();
 }
 update() {
+  this.color = document.querySelector('html').dataset.theme === 'dark' ?
+    'rgb(255, 255, 255)':
+    'rgb(0, 0, 0)';
+
   this.x += this.directionX;
   this.y += this.directionY;
   if (this.x + this.radius > canvas.width || 
@@ -64,7 +68,7 @@ function animate() {
       let opacity = 1 - distance/maxDistance;
       if (distance < maxDistance) {
         ctx.lineWidth = 2;
-        ctx.strokeStyle = `rgba(255,255,255,${opacity})`;
+        ctx.strokeStyle = document.querySelector('html').dataset.theme === 'dark' ? `rgba(255,255,255,${opacity})` : `rgba(0,0,0,${opacity})`;
         ctx.beginPath();
         ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
         ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
