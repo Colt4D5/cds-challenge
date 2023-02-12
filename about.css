@@ -6,6 +6,11 @@ main > .container {
   border-radius: 1.5rem;
   padding: 3rem;
   background-color: #19242daa;
+  box-shadow: 8px 5px 16px rgb(0 0 0 / 0.2);
+}
+
+html[data-theme="light"] main > .container {
+  background-color: #ddddddaa;
 }
 
 #pic {
@@ -16,7 +21,7 @@ main > .container {
 
 @media screen and (min-width: 40em) {
   #pic {
-    float: left
+    float: left;
     margin-bottom: 0;
   }
 }

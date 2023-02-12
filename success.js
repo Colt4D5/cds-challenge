@@ -15,14 +15,14 @@ setTimeout(() => {
   document.querySelector('#loader').style.display = 'none';
 
   formHTML += '<h2>Thank you for Registering!</h2>';
-  formHTML += `<p>First Name: ${firstName}</p>`;
-  formHTML += `<p>Last Name: ${lastName}</p>`;
-  formHTML += `<p>Phone #: ${phone}</p>`;
-  formHTML += `<p>Email: ${email}</p>`;
-  formHTML += `<p>Promo Code: ${promocode}</p>`;
-  formHTML += `<p>Where did you hear about us? ${where}</p>`;
-  formHTML += other ? `<p>Other: ${other}</p>` : '';
-  formHTML += `<p>Terms Accepted? ${termsAccepted ? 'True' : 'False'}</p>`;
+  formHTML += `<p><b>First Name:</b> ${firstName}</p>`;
+  formHTML += `<p><b>Last Name:</b> ${lastName}</p>`;
+  formHTML += `<p><b>Phone #:</b> ${phone}</p>`;
+  formHTML += `<p><b>Email:</b> ${email}</p>`;
+  formHTML += `<p><b>Promo Code:</b> ${promocode}</p>`;
+  formHTML += `<p><b>Where did you hear about us?</b> ${where}</p>`;
+  formHTML += other ? `<p><b>Other:</b> ${other}</p>` : '';
+  formHTML += `<p><b>Terms Accepted?</b> ${termsAccepted ? 'True' : 'False'}</p>`;
   formHTML += `<button onclick="backHome()">Back Home</button>`;
 
   document.querySelector('#form-output').insertAdjacentHTML('afterbegin', formHTML);

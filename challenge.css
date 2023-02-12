@@ -57,6 +57,11 @@ code {
   margin-bottom: 2rem;
 }
 
+html[data-theme="light"] code {
+  background-color: #ccc;
+  color: #444;
+}
+
 li code {
   display: inline;
   padding: 0.5rem;
